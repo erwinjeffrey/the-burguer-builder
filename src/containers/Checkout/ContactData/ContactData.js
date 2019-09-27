@@ -38,6 +38,7 @@ class ContactData extends Component {
       .post('/orders.json', order)
       .then(response => {
         this.setState({ loading: false });
+        //this works because I destributed the checkout props to this component {...this.props} if not I would have to use the withRoute CPN
         this.props.history.push('/');
       })
       .catch(error => {
