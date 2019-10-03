@@ -28,8 +28,9 @@ const reducer = (state = initialState, action) => {
           [action.ingredientName]: state.ingredients[action.ingredientName] - 1
         }
       };
+    default:
+      return state;
   }
-  return state;
 };
 
 export default reducer;
