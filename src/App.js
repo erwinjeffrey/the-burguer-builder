@@ -5,6 +5,7 @@ import Checkout from './containers/Checkout/Checkout';
 import Orders from './containers/Orders/Orders';
 import Layout from './hoc/Layout/Layout';
 import Auth from './containers/Auth/Auth';
+import Logout from './containers/Auth/Logout/Logout';
 
 class App extends Component {
   // So far so good, this a complete react course, using the latest fundation
@@ -18,6 +19,7 @@ class App extends Component {
             <Route path="/checkout" component={Checkout} />
             <Route path="/orders" component={Orders} />
             <Route path="/auth" component={Auth} />
+            <Route path="/Logout" component={Logout} />
             <Route path="/" component={BurgerBuilder} />
           </Switch>
         </Layout>
