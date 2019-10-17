@@ -1,5 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../utility';
+import { logout } from '../actions';
+import { checkAuthTimeout } from '../actions/auth';
 
 const initialState = {
   token: null,
@@ -30,6 +32,10 @@ const authFail = (state, action) => {
 };
 
 const authLogout = (state, action) => {
+    //when logout we clear out local storage
+  localStorage.removeItem('token');
+  localStorage.removeItem('expirationDate');
+  localStorage.removeItem('userId');
   return updateObject(state, { token: null, userId: null });
 };
 
@@ -52,5 +58,6 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
 
 export default reducer;
